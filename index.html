@@ -92,6 +92,38 @@
       text-align: center;
       font-style: italic;
       color: #444;
+      background: linear-gradient(90deg, #ffe6f0 0%, #e0f7ff 100%);
+      border-radius: 18px;
+      box-shadow: 0 2px 18px rgba(233,30,99,0.07);
+      padding: 28px 10px 18px 10px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1.2s;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-heart {
+      font-size: 2.2em;
+      color: #e91e63;
+      animation: pulse-heart 1.5s infinite;
+      margin-bottom: 4px;
+    }
+    @keyframes pulse-heart {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+      100% { transform: scale(1); }
+    }
+    .footer-quote {
+      color: #e91e63;
+      font-size: 1.05em;
+      font-family: 'Playfair Display', serif;
+      opacity: 0.85;
+      margin-top: 6px;
+      display: block;
     }
 
     @keyframes fadeIn {
@@ -180,9 +212,9 @@
       bottom: 80px;
       font-size: 2.2em;
       pointer-events: none;
-      opacity: 0.85;
-      z-index: 2000;
-      animation: flower-float 1.6s cubic-bezier(.4,.01,.6,1) forwards;
+      opacity: 1;
+      z-index: 9000;
+      animation: flower-float 1.8s cubic-bezier(.4,0,.2,1) forwards;
       will-change: transform, opacity;
     }
     @keyframes flower-float {
@@ -201,52 +233,145 @@
     }
 
     /* Responsive Styles */
+    @media (max-width: 900px) {
+      .container {
+        max-width: 98vw;
+        padding: 18px 2vw;
+        margin: 18px 0;
+        border-radius: 12px;
+      }
+      .info-block {
+        padding: 16px 10px;
+        font-size: 1em;
+      }
+      .special-heading {
+        font-size: 1.2em;
+        padding: 10px 10px;
+      }
+      .footer {
+        padding: 18px 4vw 12px 4vw;
+        font-size: 1em;
+        border-radius: 12px;
+      }
+    }
+
     @media (max-width: 600px) {
       .container {
-        padding: 18px 6vw;
-        margin: 18px 0;
+        padding: 10px 2vw;
+        margin: 10px 0;
+        border-radius: 8px;
+      }
+      .info-block {
+        padding: 10px 4vw;
+        margin: 12px 0;
+        font-size: 0.98em;
+      }
+      .special-heading {
+        font-size: 1em;
+        padding: 8px 4vw;
+        border-radius: 12px;
+        margin-bottom: 6px;
+      }
+      .footer {
+        padding: 12px 2vw 8px 2vw;
+        font-size: 0.98em;
+        border-radius: 8px;
+      }
+      .footer-name {
+        font-size: 1em;
+        padding: 4px 10px;
         border-radius: 10px;
       }
-      h1 {
-        font-size: 1.5em;
+      .footer-heart {
+        font-size: 1.3em;
       }
-      p, .contact, .footer {
-        font-size: 1em;
+      .footer-quote {
+        font-size: 0.95em;
       }
-      .btn {
-        font-size: 1em;
-        padding: 10px 14px;
-      }
-      .popup-content {
-        padding: 18px 8vw;
+      .popup-content, .new-popup {
+        padding: 10px 2vw;
         min-width: unset;
-        font-size: 1em;
+        font-size: 0.98em;
+        border-radius: 12px;
       }
-      .animated-amir {
+      .popup-heading {
+        font-size: 1.1em;
+      }
+      .popup-heart {
         font-size: 1.2em;
-        padding: 4px 12px;
+      }
+      .popup-whatsapp-link {
+        font-size: 1em;
+        padding: 8px 12px;
         border-radius: 10px;
       }
       .close-btn {
-        font-size: 22px;
-        top: 6px; right: 10px;
+        font-size: 20px;
+        top: 4px; right: 8px;
+      }
+      .animated-amir {
+        font-size: 1em;
+        padding: 3px 8px;
+        border-radius: 8px;
+      }
+      .amir-bg-animated {
+        font-size: 16vw;
+        opacity: 0.18;
+        filter: blur(0.2px);
+        top: 54%;
+      }
+      .btn {
+        font-size: 0.98em;
+        padding: 8px 10px;
+        margin-top: 18px;
+      }
+      .contact-nice {
+        padding: 10px 2vw;
+        border-radius: 10px;
+      }
+      .contact-heading {
+        font-size: 1em;
+        gap: 4px;
+      }
+      .contact-details {
+        font-size: 0.95em;
+        gap: 5px;
+      }
+      .whatsapp-link {
+        font-size: 0.98em;
+        padding: 7px 10px;
+        border-radius: 8px;
       }
     }
 
     @media (max-width: 400px) {
       .container {
-        padding: 8px 2vw;
+        padding: 4px 1vw;
+      }
+      .info-block {
+        padding: 6px 2vw;
+        font-size: 0.95em;
+      }
+      .special-heading {
+        font-size: 0.95em;
+        padding: 6px 2vw;
+      }
+      .footer {
+        padding: 8px 1vw 6px 1vw;
+        font-size: 0.95em;
+      }
+      .footer-name {
+        font-size: 0.95em;
+        padding: 3px 6px;
+      }
+      .popup-content, .new-popup {
+        padding: 6px 1vw;
+        font-size: 0.95em;
+        border-radius: 8px;
       }
       .btn {
         font-size: 0.95em;
-        padding: 8px 8px;
-      }
-      .popup-content {
-        padding: 10px 2vw;
-        font-size: 0.95em;
-      }
-      .romantic-quote {
-        font-size: 0.95em;
+        padding: 6px 6px;
       }
     }
 
@@ -263,7 +388,8 @@
       color: #ffb6c1;
       opacity: 0.18;
       font-size: 2.2em;
-      animation: heart-float 6s linear infinite;
+      animation: heart-float 10s cubic-bezier(.4,0,.2,1) forwards;
+      will-change: transform, opacity;
     }
     @keyframes heart-float {
       0% {
@@ -343,36 +469,849 @@
         cursor: auto !important;
       }
     }
+
+    .info-block {
+      background: rgba(255,255,255,0.92);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(233,30,99,0.08), 0 1.5px 6px rgba(33,150,243,0.07);
+      margin: 22px 0;
+      padding: 22px 28px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+      border-left: 6px solid #e91e63;
+    }
+    .info-block:hover {
+      transform: translateY(-6px) scale(1.025);
+      box-shadow: 0 8px 32px rgba(233,30,99,0.13), 0 3px 12px rgba(33,150,243,0.10);
+      background: linear-gradient(90deg, #fff 80%, #ffe6f0 100%);
+    }
+
+    .footer-name {
+      display: inline-block;
+      margin: 10px 0 0 0;
+      padding: 6px 24px;
+      background: linear-gradient(90deg, #e0f7ff 0%, #ffe6f0 100%);
+      color: #e91e63;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3em;
+      font-weight: 600;
+      border-radius: 16px;
+      letter-spacing: 1.5px;
+      box-shadow: 0 2px 12px #e91e6333;
+      transition: box-shadow 0.3s, transform 0.3s;
+      position: relative;
+      vertical-align: middle;
+    }
+    .footer-name i {
+      margin-right: 8px;
+      color: #2196f3;
+      font-size: 1em;
+      vertical-align: middle;
+    }
+    .footer-name:hover {
+      box-shadow: 0 6px 24px #e91e6380;
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    /* Animated "Amir" background text */
+    .amir-bg-animated {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 9vw;
+      font-weight: 900;
+      color: #e91e63;
+      opacity: 0.13;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: 0.18em;
+      white-space: nowrap;
+      text-shadow:
+        0 4px 32px #e91e63cc,
+        0 2px 8px #2196f355;
+      animation: amir-bg-move 7s ease-in-out infinite alternate;
+      filter: blur(0.5px);
+      z-index: 0;
+    }
+    @keyframes amir-bg-move {
+      0% { letter-spacing: 0.18em; filter: blur(0.5px); opacity: 0.13; }
+      50% { letter-spacing: 0.32em; filter: blur(1.5px); opacity: 0.19; }
+      100% { letter-spacing: 0.18em; filter: blur(0.5px); opacity: 0.13; }
+    }
+
+    /* Mobile: thoda chota aur zyada visible */
+    @media (max-width: 600px) {
+      .amir-bg-animated {
+        font-size: 16vw;
+        opacity: 0.18;
+        filter: blur(0.2px);
+        top: 54%;
+      }
+    }
+
+    .special-heading {
+      display: inline-block;
+      background: linear-gradient(90deg, #ffe6f0 0%, #e0f7ff 100%);
+      color: #e91e63;
+      font-family: 'Playfair Display', serif;
+      font-size: 2em;
+      font-weight: 700;
+      padding: 12px 32px;
+      border-radius: 22px;
+      box-shadow: 0 4px 18px #e91e6333;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-align: center;
+      position: relative;
+      animation: gradient-move 3s linear infinite;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .special-heading i {
+      color: #ffc107;
+      margin: 0 8px;
+      font-size: 1.1em;
+      vertical-align: middle;
+    }
+    .special-heading:hover {
+      box-shadow: 0 8px 32px #e91e6380;
+      transform: scale(1.04) rotate(-1deg);
+    }
+
+    /* WhatsApp/contact info-block styles */
+    .contact-nice {
+      margin-top: 20px;
+      padding: 18px 24px;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(233, 30, 99, 0.08), 0 1.5px 6px rgba(33, 150, 243, 0.07);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-heading {
+      font-size: 1.4em;
+      color: #e91e63;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .contact-heading i {
+      font-size: 1.6em;
+      color: #ff4081;
+    }
+    .contact-details {
+      font-size: 0.95em;
+      color: #333;
+      margin-bottom: 18px;
+      display: grid;
+      row-gap: 10px;
+    }
+    .contact-label {
+      font-weight: 500;
+      margin-right: 6px;
+    }
+    .whatsapp-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .whatsapp-link:hover {
+      background: #128C7E;
+    }
+
+    /* Popup thank you message styles */
+    .popup-content {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      position: relative;
+      min-width: 300px;
+      animation: fadeIn 0.5s;
+      max-width: 90vw;
+      box-sizing: border-box;
+    }
+    .popup-content h2 {
+      margin-top: 0;
+      color: #e91e63;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8em;
+      margin-bottom: 12px;
+    }
+    .popup-content p {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 18px;
+    }
+    .popup-content a {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .popup-content a:hover {
+      background: #128C7E;
+    }
+
+    /* Media queries for responsive design */
+    @media (max-width: 900px) {
+      .container {
+        max-width: 98vw;
+        padding: 18px 2vw;
+        margin: 18px 0;
+        border-radius: 12px;
+      }
+      .info-block {
+        padding: 16px 10px;
+        font-size: 1em;
+      }
+      .special-heading {
+        font-size: 1.2em;
+        padding: 10px 10px;
+      }
+      .footer {
+        padding: 18px 4vw 12px 4vw;
+        font-size: 1em;
+        border-radius: 12px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px 2vw;
+        margin: 10px 0;
+        border-radius: 8px;
+      }
+      .info-block {
+        padding: 10px 4vw;
+        margin: 12px 0;
+        font-size: 0.98em;
+      }
+      .special-heading {
+        font-size: 1em;
+        padding: 8px 4vw;
+        border-radius: 12px;
+        margin-bottom: 6px;
+      }
+      .footer {
+        padding: 12px 2vw 8px 2vw;
+        font-size: 0.98em;
+        border-radius: 8px;
+      }
+      .footer-name {
+        font-size: 1em;
+        padding: 4px 10px;
+        border-radius: 10px;
+      }
+      .footer-heart {
+        font-size: 1.3em;
+      }
+      .footer-quote {
+        font-size: 0.95em;
+      }
+      .popup-content, .new-popup {
+        padding: 10px 2vw;
+        min-width: unset;
+        font-size: 0.98em;
+        border-radius: 12px;
+      }
+      .popup-heading {
+        font-size: 1.1em;
+      }
+      .popup-heart {
+        font-size: 1.2em;
+      }
+      .popup-whatsapp-link {
+        font-size: 1em;
+        padding: 8px 12px;
+        border-radius: 10px;
+      }
+      .close-btn {
+        font-size: 20px;
+        top: 4px; right: 8px;
+      }
+      .animated-amir {
+        font-size: 1em;
+        padding: 3px 8px;
+        border-radius: 8px;
+      }
+      .amir-bg-animated {
+        font-size: 16vw;
+        opacity: 0.18;
+        filter: blur(0.2px);
+        top: 54%;
+      }
+      .btn {
+        font-size: 0.98em;
+        padding: 8px 10px;
+        margin-top: 18px;
+      }
+      .contact-nice {
+        padding: 10px 2vw;
+        border-radius: 10px;
+      }
+      .contact-heading {
+        font-size: 1em;
+        gap: 4px;
+      }
+      .contact-details {
+        font-size: 0.95em;
+        gap: 5px;
+      }
+      .whatsapp-link {
+        font-size: 0.98em;
+        padding: 7px 10px;
+        border-radius: 8px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .container {
+        padding: 4px 1vw;
+      }
+      .info-block {
+        padding: 6px 2vw;
+        font-size: 0.95em;
+      }
+      .special-heading {
+        font-size: 0.95em;
+        padding: 6px 2vw;
+      }
+      .footer {
+        padding: 8px 1vw 6px 1vw;
+        font-size: 0.95em;
+      }
+      .footer-name {
+        font-size: 0.95em;
+        padding: 3px 6px;
+      }
+      .popup-content, .new-popup {
+        padding: 6px 1vw;
+        font-size: 0.95em;
+        border-radius: 8px;
+      }
+      .btn {
+        font-size: 0.95em;
+        padding: 6px 6px;
+      }
+    }
+
+    /* Hearts Background Animation */
+    .hearts-bg {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .heart-anim {
+      position: absolute;
+      color: #ffb6c1;
+      opacity: 0.18;
+      font-size: 2.2em;
+      animation: heart-float 10s cubic-bezier(.4,0,.2,1) forwards;
+      will-change: transform, opacity;
+    }
+    @keyframes heart-float {
+      0% {
+        transform: translateY(100vh) scale(0.8) rotate(-10deg);
+        opacity: 0.18;
+      }
+      60% {
+        opacity: 0.25;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.1) rotate(12deg);
+        opacity: 0;
+      }
+    }
+
+    .romantic-quote {
+      margin: 38px 0 10px 0;
+      text-align: center;
+      font-size: 1.15em;
+      color: #e91e63;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+      opacity: 0.85;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* Network Animation Styles */
+    #network-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 1;
+      pointer-events: none;
+      display: block;
+    }
+    .network-dot {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(233, 30, 99, 0.7);
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+    }
+
+    .custom-cursor {
+      position: fixed;
+      left: 0; top: 0;
+      width: 32px; height: 32px;
+      pointer-events: none;
+      z-index: 3000;
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s cubic-bezier(.4,0,.2,1);
+      font-size: 2em;
+      user-select: none;
+      filter: drop-shadow(0 2px 6px #e91e6380);
+    }
+
+    @media (pointer: coarse), (max-width: 800px) {
+      .custom-cursor {
+        display: none !important;
+      }
+      body {
+        cursor: auto !important;
+      }
+    }
+
+    .info-block {
+      background: rgba(255,255,255,0.92);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(233,30,99,0.08), 0 1.5px 6px rgba(33,150,243,0.07);
+      margin: 22px 0;
+      padding: 22px 28px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+      border-left: 6px solid #e91e63;
+    }
+    .info-block:hover {
+      transform: translateY(-6px) scale(1.025);
+      box-shadow: 0 8px 32px rgba(233,30,99,0.13), 0 3px 12px rgba(33,150,243,0.10);
+      background: linear-gradient(90deg, #fff 80%, #ffe6f0 100%);
+    }
+
+    .footer-name {
+      display: inline-block;
+      margin: 10px 0 0 0;
+      padding: 6px 24px;
+      background: linear-gradient(90deg, #e0f7ff 0%, #ffe6f0 100%);
+      color: #e91e63;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3em;
+      font-weight: 600;
+      border-radius: 16px;
+      letter-spacing: 1.5px;
+      box-shadow: 0 2px 12px #e91e6333;
+      transition: box-shadow 0.3s, transform 0.3s;
+      position: relative;
+      vertical-align: middle;
+    }
+    .footer-name i {
+      margin-right: 8px;
+      color: #2196f3;
+      font-size: 1em;
+      vertical-align: middle;
+    }
+    .footer-name:hover {
+      box-shadow: 0 6px 24px #e91e6380;
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    /* Animated "Amir" background text */
+    .amir-bg-animated {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 9vw;
+      font-weight: 900;
+      color: #e91e63;
+      opacity: 0.13;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: 0.18em;
+      white-space: nowrap;
+      text-shadow:
+        0 4px 32px #e91e63cc,
+        0 2px 8px #2196f355;
+      animation: amir-bg-move 7s ease-in-out infinite alternate;
+      filter: blur(0.5px);
+      z-index: 0;
+    }
+    @keyframes amir-bg-move {
+      0% { letter-spacing: 0.18em; filter: blur(0.5px); opacity: 0.13; }
+      50% { letter-spacing: 0.32em; filter: blur(1.5px); opacity: 0.19; }
+      100% { letter-spacing: 0.18em; filter: blur(0.5px); opacity: 0.13; }
+    }
+
+    /* Mobile: thoda chota aur zyada visible */
+    @media (max-width: 600px) {
+      .amir-bg-animated {
+        font-size: 16vw;
+        opacity: 0.18;
+        filter: blur(0.2px);
+        top: 54%;
+      }
+    }
+
+    .special-heading {
+      display: inline-block;
+      background: linear-gradient(90deg, #ffe6f0 0%, #e0f7ff 100%);
+      color: #e91e63;
+      font-family: 'Playfair Display', serif;
+      font-size: 2em;
+      font-weight: 700;
+      padding: 12px 32px;
+      border-radius: 22px;
+      box-shadow: 0 4px 18px #e91e6333;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-align: center;
+      position: relative;
+      animation: gradient-move 3s linear infinite;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .special-heading i {
+      color: #ffc107;
+      margin: 0 8px;
+      font-size: 1.1em;
+      vertical-align: middle;
+    }
+    .special-heading:hover {
+      box-shadow: 0 8px 32px #e91e6380;
+      transform: scale(1.04) rotate(-1deg);
+    }
+
+    /* WhatsApp/contact info-block styles */
+    .contact-nice {
+      margin-top: 20px;
+      padding: 18px 24px;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(233, 30, 99, 0.08), 0 1.5px 6px rgba(33, 150, 243, 0.07);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-heading {
+      font-size: 1.4em;
+      color: #e91e63;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .contact-heading i {
+      font-size: 1.6em;
+      color: #ff4081;
+    }
+    .contact-details {
+      font-size: 0.95em;
+      color: #333;
+      margin-bottom: 18px;
+      display: grid;
+      row-gap: 10px;
+    }
+    .contact-label {
+      font-weight: 500;
+      margin-right: 6px;
+    }
+    .whatsapp-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .whatsapp-link:hover {
+      background: #128C7E;
+    }
+
+    /* Popup thank you message styles */
+    .popup-content {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      position: relative;
+      min-width: 300px;
+      animation: fadeIn 0.5s;
+      max-width: 90vw;
+      box-sizing: border-box;
+    }
+    .popup-content h2 {
+      margin-top: 0;
+      color: #e91e63;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8em;
+      margin-bottom: 12px;
+    }
+    .popup-content p {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 18px;
+    }
+    .popup-content a {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .popup-content a:hover {
+      background: #128C7E;
+    }
+
+    /* Media queries for responsive design */
+    @media (max-width: 900px) {
+      .container {
+        max-width: 98vw;
+        padding: 18px 2vw;
+        margin: 18px 0;
+        border-radius: 12px;
+      }
+      .info-block {
+        padding: 16px 10px;
+        font-size: 1em;
+      }
+      .special-heading {
+        font-size: 1.2em;
+        padding: 10px 10px;
+      }
+      .footer {
+        padding: 18px 4vw 12px 4vw;
+        font-size: 1em;
+        border-radius: 12px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px 2vw;
+        margin: 10px 0;
+        border-radius: 8px;
+      }
+      .info-block {
+        padding: 10px 4vw;
+        margin: 12px 0;
+        font-size: 0.98em;
+      }
+      .special-heading {
+        font-size: 1em;
+        padding: 8px 4vw;
+        border-radius: 12px;
+        margin-bottom: 6px;
+      }
+      .footer {
+        padding: 12px 2vw 8px 2vw;
+        font-size: 0.98em;
+        border-radius: 8px;
+      }
+      .footer-name {
+        font-size: 1em;
+        padding: 4px 10px;
+        border-radius: 10px;
+      }
+      .footer-heart {
+        font-size: 1.3em;
+      }
+      .footer-quote {
+        font-size: 0.95em;
+      }
+      .popup-content, .new-popup {
+        padding: 10px 2vw;
+        min-width: unset;
+        font-size: 0.98em;
+        border-radius: 12px;
+      }
+      .popup-heading {
+        font-size: 1.1em;
+      }
+      .popup-heart {
+        font-size: 1.2em;
+      }
+      .popup-whatsapp-link {
+        font-size: 1em;
+        padding: 8px 12px;
+        border-radius: 10px;
+      }
+      .close-btn {
+        font-size: 20px;
+        top: 4px; right: 8px;
+      }
+      .animated-amir {
+        font-size: 1em;
+        padding: 3px 8px;
+        border-radius: 8px;
+      }
+      .amir-bg-animated {
+        font-size: 16vw;
+        opacity: 0.18;
+        filter: blur(0.2px);
+        top: 54%;
+      }
+      .btn {
+        font-size: 0.98em;
+        padding: 8px 10px;
+        margin-top: 18px;
+      }
+      .contact-nice {
+        padding: 10px 2vw;
+        border-radius: 10px;
+      }
+      .contact-heading {
+        font-size: 1em;
+        gap: 4px;
+      }
+      .contact-details {
+        font-size: 0.95em;
+        gap: 5px;
+      }
+      .whatsapp-link {
+        font-size: 0.98em;
+        padding: 7px 10px;
+        border-radius: 8px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .container {
+        padding: 4px 1vw;
+      }
+      .info-block {
+        padding: 6px 2vw;
+        font-size: 0.95em;
+      }
+      .special-heading {
+        font-size: 0.95em;
+        padding: 6px 2vw;
+      }
+      .footer {
+        padding: 8px 1vw 6px 1vw;
+        font-size: 0.95em;
+      }
+      .footer-name {
+        font-size: 0.95em;
+        padding: 3px 6px;
+      }
+      .popup-content, .new-popup {
+        padding: 6px 1vw;
+        font-size: 0.95em;
+        border-radius: 8px;
+      }
+      .btn {
+        font-size: 0.95em;
+        padding: 6px 6px;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Animated "Amir" background text -->
+  <div class="amir-bg-animated">Amir</div>
   <div class="hearts-bg"></div>
   <canvas id="network-bg" style="position:fixed;inset:0;z-index:1;pointer-events:none;"></canvas>
   <div class="container animate__animated animate__fadeInUp">
-    <h1>🌸 A Special Internship Offer</h1>
-    <p>Dear <span class="highlight">Respected Lady</span>,</p>
-    <p>I hope you're doing well and your days are filled with joy and creativity.</p>
-    <p>
-      I’m reaching out with something sincere and meaningful. At the moment, I have a project related to
-      <span class="highlight">Graphic Design</span>, and I’m looking for someone talented and passionate.
-    </p>
-    <p>
-      If you're interested, I would love to offer you a <span class="highlight">Paid Internship</span>. It’s not just about work — it’s a chance to grow, explore your potential, and take a step forward in your career journey.
-    </p>
-    <p>
-      To me, this is more than just work. I admire your spirit, your talent, and your presence. It would be an honor to walk this creative path with you. 💖
-    </p>
-    <div class="contact">
-      If you're interested, feel free to reach out:<br/>
-      📞 <strong>03065364937</strong><br/>
-      📧 <span class="email">amirmajeed4905@gmail.com</span><br/>
-      <a href="https://wa.me/923065364937" target="_blank" style="color:#25D366;font-weight:bold;text-decoration:none;">
-        <i class="fab fa-whatsapp"></i> WhatsApp: 03065364937
-      </a>
+    <div class="info-block animate__animated animate__fadeInLeft">
+      <h1 class="special-heading">
+        <i class="fas fa-star"></i>
+        A Special Internship Offer
+        <i class="fas fa-star"></i>
+      </h1>
+      <p>Dear <span class="highlight">Respected Lady</span>,</p>
+      <p>
+        I hope you're doing well and your days are filled with joy and creativity.
+      </p>
     </div>
-    <button class="btn" id="popupBtn">
-      Get in Touch 💌
-    </button>
+    <div class="info-block animate__animated animate__fadeInRight">
+      <p>
+        I’m reaching out with something sincere and meaningful. At the moment, I have a project related to
+        <span class="highlight">Graphic Design</span>, and I’m looking for someone talented and passionate.
+      </p>
+      <p>
+        If you're interested, I would love to offer you a <span class="highlight">Paid Internship</span>. It’s not just about work — it’s a chance to grow, explore your potential, and take a step forward in your career journey.
+      </p>
+    </div>
+    <div class="info-block animate__animated animate__fadeInLeft">
+      <p>
+        To me, this is more than just work. I admire your spirit, your talent, and your presence. It would be an honor to walk this creative path with you. 💖
+      </p>
+    </div>
+    <div class="info-block animate__animated animate__fadeInUp">
+      <div class="contact-nice">
+        <div class="contact-heading">
+          <i class="fas fa-envelope-open-text"></i>
+          Let's Connect!
+        </div>
+        <div class="contact-details">
+          <div>
+            <i class="fas fa-phone-alt" style="color:#43e97b;"></i>
+            <span class="contact-label">Phone:</span>
+            <strong>0306 5364937</strong>
+          </div>
+          <div>
+            <i class="fas fa-envelope" style="color:#2196f3;"></i>
+            <span class="contact-label">Email:</span>
+            <span class="email">amirmajeed4905@gmail.com</span>
+          </div>
+          <div>
+            <a href="https://wa.me/923065364937" target="_blank" class="whatsapp-link">
+              <i class="fab fa-whatsapp"></i>
+              Message on WhatsApp
+            </a>
+          </div>
+        </div>
+        <button class="btn" id="popupBtn">
+          Get in Touch 💌
+        </button>
+      </div>
+    </div>
     <div class="romantic-quote">
       <i class="fas fa-heart" style="color:#e91e63;"></i>
       <span>
@@ -380,23 +1319,46 @@
       </span>
     </div>
     <div class="footer">
-      With kindness and admiration,<br/>
-      <strong class="animated-amir">Amir</strong><br/>
-      <span style="color: #e91e63;">“In work and in dreams, I hope to walk beside you.”</span>
+      <div class="footer-inner">
+        <div class="footer-heart">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div class="footer-text">
+          <span style="font-size:1.1em;color:#e91e63;font-family:'Playfair Display',serif;">
+            With kindness and admiration,
+          </span>
+          <br/>
+          <span class="footer-name">
+            <i class="fas fa-feather-alt"></i>
+            Amir Majeed
+          </span>
+          <br/>
+          <span class="footer-quote">
+            “In work and in dreams, I hope to walk beside you.”
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Custom Popup Modal -->
   <div id="customPopup" class="popup-overlay">
-    <div class="popup-content">
+    <div class="popup-content new-popup">
       <span class="close-btn" id="closePopup">&times;</span>
-      <h2>Thank You! 💖</h2>
-      <p>I’m really hoping we can make something beautiful together.</p>
-      <p style="font-style:italic;color:#888;margin-bottom:8px;">
-        You can message me anytime, I'll be waiting! 😊
-      </p>
-      <a href="https://wa.me/923065364937" target="_blank" style="display:inline-block;margin-top:18px;background:#25D366;color:white;padding:10px 22px;border-radius:8px;font-size:18px;text-decoration:none;font-weight:bold;">
-        <i class="fab fa-whatsapp"></i> WhatsApp: 03065364937
+      <div class="popup-heart">
+        <i class="fas fa-heartbeat"></i>
+      </div>
+      <h2 class="popup-heading">
+        Thank You! <span style="font-size:1.2em;">💖</span>
+      </h2>
+      <div class="popup-message">
+        I’m really hoping we can make something beautiful together.<br>
+        <span style="font-style:italic;color:#888;">
+          You can message me anytime, I'll be waiting! 😊
+        </span>
+      </div>
+      <a href="https://wa.me/923065364937" target="_blank" class="popup-whatsapp-link">
+        <i class="fab fa-whatsapp"> </i>WhatsApp: 03065364937
       </a>
     </div>
   </div>
@@ -425,7 +1387,7 @@
     // Flower Animation Function
     function showFlowers() {
       const flowers = ['🌸','🌷','🌺','💐','🌻','🌼'];
-      for(let i=0; i<5; i++) {
+      for(let i=0; i<20; i++) {
         setTimeout(() => {
           const flower = document.createElement('span');
           flower.className = 'flower';
@@ -444,14 +1406,14 @@
     function spawnHearts() {
       const heartsBg = document.querySelector('.hearts-bg');
       if (!heartsBg) return;
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 30; i++) {
         setTimeout(() => {
           const heart = document.createElement('span');
           heart.className = 'heart-anim';
-          heart.innerText = '❤️';
+          heart.innerText = ['❤️','S','🌸','🌷','🌺','A','🌻','for u ','🌼'][Math.floor(Math.random()*9)];
           heart.style.left = Math.random() * 100 + 'vw';
-          heart.style.fontSize = (1.5 + Math.random() * 1.5) + 'em';
-          heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+          heart.style.fontSize = (2 + Math.random() * 2 ) + 'em';
+          heart.style.animationDuration = (10 + Math.random() * 3) + 's';
           heartsBg.appendChild(heart);
           setTimeout(() => heart.remove(), 7000);
         }, i * 600);
