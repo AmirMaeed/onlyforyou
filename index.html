@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Internship Opportunity</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #e0f7ff);
+      color: #333;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #e91e63;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .highlight {
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .contact {
+      font-size: 16px;
+      margin-top: 25px;
+    }
+
+    .email {
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      background: #ff4081;
+      color: white;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #d81b60;
+    }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-style: italic;
+      color: #444;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    .popup-overlay.active {
+      display: flex;
+    }
+    .popup-content {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      text-align: center;
+      position: relative;
+      min-width: 300px;
+      animation: fadeIn 0.5s;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 18px;
+      font-size: 28px;
+      color: #e91e63;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .popup-content h2 {
+      margin-top: 0;
+      color: #e91e63;
+    }
+
+    /* Add this at the end of your <style> tag */
+    .animated-amir {
+      background: linear-gradient(90deg, #2196f3 0%, #00bcd4 50%, #43e97b 100%);
+      background-size: 200% auto;
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2em;
+      padding: 6px 28px;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(33,150,243,0.10);
+      animation: gradient-move 3s linear infinite, pop 1.2s cubic-bezier(.68,-0.55,.27,1.55) 1;
+      letter-spacing: 2px;
+      display: inline-block;
+      text-shadow: 0 2px 8px #2196f355;
+      transition: box-shadow 0.3s;
+    }
+    .animated-amir:hover {
+      box-shadow: 0 8px 32px rgba(33,150,243,0.18);
+      transform: scale(1.05);
+    }
+
+    @keyframes gradient-move {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    @keyframes pop {
+      0% { transform: scale(0.7) rotate(-8deg);}
+      60% { transform: scale(1.15) rotate(3deg);}
+      100% { transform: scale(1) rotate(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="container animate__animated animate__fadeInUp">
+    <h1>🌸 A Special Internship Offer</h1>
+    <p>Dear <span class="highlight">Respected Lady</span>,</p>
+    <p>I hope you're doing well and your days are filled with joy and creativity.</p>
+    <p>
+      I’m reaching out with something sincere and meaningful. At the moment, I have a project related to
+      <span class="highlight">Graphic Design</span>, and I’m looking for someone talented and passionate.
+    </p>
+    <p>
+      If you're interested, I would love to offer you a <span class="highlight">Paid Internship</span>. It’s not just about work — it’s a chance to grow, explore your potential, and take a step forward in your career journey.
+    </p>
+    <p>
+      To me, this is more than just work. I admire your spirit, your talent, and your presence. It would be an honor to walk this creative path with you. 💖
+    </p>
+    <div class="contact">
+      If you're interested, feel free to reach out:<br/>
+      📞 <strong>03065364937</strong><br/>
+      📧 <span class="email">amirmajeed4905@gmail.com</span><br/>
+      <a href="https://wa.me/923065364937" target="_blank" style="color:#25D366;font-weight:bold;text-decoration:none;">
+        <i class="fab fa-whatsapp"></i> WhatsApp: 03065364937
+      </a>
+    </div>
+    <button class="btn" id="popupBtn">
+      Get in Touch 💌
+    </button>
+    <div class="footer">
+      With kindness and admiration,<br/>
+      <strong class="animated-amir">Amir</strong><br/>
+      <span style="color: #e91e63;">“In work and in dreams, I hope to walk beside you.”</span>
+    </div>
+  </div>
+
+  <!-- Custom Popup Modal -->
+  <div id="customPopup" class="popup-overlay">
+    <div class="popup-content">
+      <span class="close-btn" id="closePopup">&times;</span>
+      <h2>Thank You! 💖</h2>
+      <p>I’m really hoping we can make something beautiful together.</p>
+      <a href="https://wa.me/923065364937" target="_blank" style="display:inline-block;margin-top:18px;background:#25D366;color:white;padding:10px 22px;border-radius:8px;font-size:18px;text-decoration:none;font-weight:bold;">
+        <i class="fab fa-whatsapp"></i> WhatsApp: 03065364937
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const popupBtn = document.getElementById('popupBtn');
+    const popup = document.getElementById('customPopup');
+    const closePopup = document.getElementById('closePopup');
+
+    popupBtn.onclick = function() {
+      popup.classList.add('active');
+    }
+    closePopup.onclick = function() {
+      popup.classList.remove('active');
+    }
+    window.onclick = function(event) {
+      if (event.target === popup) {
+        popup.classList.remove('active');
+      }
+    }
+  </script>
+</body>
+</html>
