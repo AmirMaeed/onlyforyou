@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -48,6 +49,7 @@
     .contact {
       font-size: 16px;
       margin-top: 25px;
+      word-break: break-word;
     }
 
     .email {
@@ -66,10 +68,23 @@
       border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
     }
-
+    .btn::after {
+      content: "💖";
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%) scale(0);
+      transition: transform 0.3s;
+      font-size: 1.2em;
+    }
     .btn:hover {
       background: #d81b60;
+    }
+    .btn:hover::after {
+      transform: translateY(-50%) scale(1.2);
     }
 
     .footer {
@@ -111,6 +126,8 @@
       position: relative;
       min-width: 300px;
       animation: fadeIn 0.5s;
+      max-width: 90vw;
+      box-sizing: border-box;
     }
     .close-btn {
       position: absolute;
@@ -125,7 +142,6 @@
       color: #e91e63;
     }
 
-    /* Add this at the end of your <style> tag */
     .animated-amir {
       background: linear-gradient(90deg, #2196f3 0%, #00bcd4 50%, #43e97b 100%);
       background-size: 200% auto;
@@ -156,9 +172,156 @@
       60% { transform: scale(1.15) rotate(3deg);}
       100% { transform: scale(1) rotate(0);}
     }
+
+    /* Add this at the end of your <style> tag */
+    .flower {
+      position: fixed;
+      left: 50%;
+      bottom: 80px;
+      font-size: 2.2em;
+      pointer-events: none;
+      opacity: 0.85;
+      z-index: 2000;
+      animation: flower-float 1.6s cubic-bezier(.4,.01,.6,1) forwards;
+      will-change: transform, opacity;
+    }
+    @keyframes flower-float {
+      0% {
+        transform: translate(-50%, 0) scale(0.7) rotate(-10deg);
+        opacity: 0.85;
+      }
+      60% {
+        opacity: 1;
+        transform: translate(-50%, -80px) scale(1.2) rotate(10deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -220px) scale(1) rotate(-8deg);
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 600px) {
+      .container {
+        padding: 18px 6vw;
+        margin: 18px 0;
+        border-radius: 10px;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      p, .contact, .footer {
+        font-size: 1em;
+      }
+      .btn {
+        font-size: 1em;
+        padding: 10px 14px;
+      }
+      .popup-content {
+        padding: 18px 8vw;
+        min-width: unset;
+        font-size: 1em;
+      }
+      .animated-amir {
+        font-size: 1.2em;
+        padding: 4px 12px;
+        border-radius: 10px;
+      }
+      .close-btn {
+        font-size: 22px;
+        top: 6px; right: 10px;
+      }
+    }
+
+    /* Hearts Background Animation */
+    .hearts-bg {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .heart-anim {
+      position: absolute;
+      color: #ffb6c1;
+      opacity: 0.18;
+      font-size: 2.2em;
+      animation: heart-float 6s linear infinite;
+    }
+    @keyframes heart-float {
+      0% {
+        transform: translateY(100vh) scale(0.8) rotate(-10deg);
+        opacity: 0.18;
+      }
+      60% {
+        opacity: 0.25;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.1) rotate(12deg);
+        opacity: 0;
+      }
+    }
+
+    .romantic-quote {
+      margin: 38px 0 10px 0;
+      text-align: center;
+      font-size: 1.15em;
+      color: #e91e63;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+      opacity: 0.85;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* Network Animation Styles */
+    #network-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 1;
+      pointer-events: none;
+      display: block;
+    }
+    .network-dot {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(233, 30, 99, 0.7);
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+    }
+
+    .custom-cursor {
+      position: fixed;
+      left: 0; top: 0;
+      width: 32px; height: 32px;
+      pointer-events: none;
+      z-index: 3000;
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s cubic-bezier(.4,0,.2,1);
+      font-size: 2em;
+      user-select: none;
+      filter: drop-shadow(0 2px 6px #e91e6380);
+    }
   </style>
 </head>
 <body>
+  <div class="hearts-bg"></div>
+  <canvas id="network-bg" style="position:fixed;inset:0;z-index:1;pointer-events:none;"></canvas>
   <div class="container animate__animated animate__fadeInUp">
     <h1>🌸 A Special Internship Offer</h1>
     <p>Dear <span class="highlight">Respected Lady</span>,</p>
@@ -184,6 +347,12 @@
     <button class="btn" id="popupBtn">
       Get in Touch 💌
     </button>
+    <div class="romantic-quote">
+      <i class="fas fa-heart" style="color:#e91e63;"></i>
+      <span>
+        "Every moment with you is a beautiful memory in the making."
+      </span>
+    </div>
     <div class="footer">
       With kindness and admiration,<br/>
       <strong class="animated-amir">Amir</strong><br/>
@@ -197,11 +366,17 @@
       <span class="close-btn" id="closePopup">&times;</span>
       <h2>Thank You! 💖</h2>
       <p>I’m really hoping we can make something beautiful together.</p>
+      <p style="font-style:italic;color:#888;margin-bottom:8px;">
+        You can message me anytime, I'll be waiting! 😊
+      </p>
       <a href="https://wa.me/923065364937" target="_blank" style="display:inline-block;margin-top:18px;background:#25D366;color:white;padding:10px 22px;border-radius:8px;font-size:18px;text-decoration:none;font-weight:bold;">
         <i class="fab fa-whatsapp"></i> WhatsApp: 03065364937
       </a>
     </div>
   </div>
+
+  <!-- Add this just after <body> tag -->
+  <div class="custom-cursor" id="customCursor">💖</div>
 
   <script>
     const popupBtn = document.getElementById('popupBtn');
@@ -210,6 +385,7 @@
 
     popupBtn.onclick = function() {
       popup.classList.add('active');
+      showFlowers();
     }
     closePopup.onclick = function() {
       popup.classList.remove('active');
@@ -219,6 +395,52 @@
         popup.classList.remove('active');
       }
     }
+
+    // Flower Animation Function
+    function showFlowers() {
+      const flowers = ['🌸','🌷','🌺','💐','🌻','🌼'];
+      for(let i=0; i<5; i++) {
+        setTimeout(() => {
+          const flower = document.createElement('span');
+          flower.className = 'flower';
+          flower.innerText = flowers[Math.floor(Math.random()*flowers.length)];
+          // Random horizontal offset
+          flower.style.left = (45 + Math.random()*10) + '%';
+          // Random size
+          flower.style.fontSize = (1.7 + Math.random()*1.2) + 'em';
+          document.body.appendChild(flower);
+          setTimeout(() => flower.remove(), 1700);
+        }, i*180);
+      }
+    }
+
+    // Animated floating hearts background
+    function spawnHearts() {
+      const heartsBg = document.querySelector('.hearts-bg');
+      if (!heartsBg) return;
+      for (let i = 0; i < 10; i++) {
+        setTimeout(() => {
+          const heart = document.createElement('span');
+          heart.className = 'heart-anim';
+          heart.innerText = '❤️';
+          heart.style.left = Math.random() * 100 + 'vw';
+          heart.style.fontSize = (1.5 + Math.random() * 1.5) + 'em';
+          heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+          heartsBg.appendChild(heart);
+          setTimeout(() => heart.remove(), 7000);
+        }, i * 600);
+      }
+    }
+    setInterval(spawnHearts, 4000);
+    spawnHearts();
+
+    // --- Custom Heart Cursor ---
+    const cursor = document.getElementById('customCursor');
+    document.body.style.cursor = 'none';
+    window.addEventListener('mousemove', e=>{
+      cursor.style.left = e.clientX+'px';
+      cursor.style.top = e.clientY+'px';
+    });
   </script>
 </body>
 </html>
