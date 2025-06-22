@@ -233,6 +233,23 @@
       }
     }
 
+    @media (max-width: 400px) {
+      .container {
+        padding: 8px 2vw;
+      }
+      .btn {
+        font-size: 0.95em;
+        padding: 8px 8px;
+      }
+      .popup-content {
+        padding: 10px 2vw;
+        font-size: 0.95em;
+      }
+      .romantic-quote {
+        font-size: 0.95em;
+      }
+    }
+
     /* Hearts Background Animation */
     .hearts-bg {
       pointer-events: none;
@@ -316,6 +333,15 @@
       font-size: 2em;
       user-select: none;
       filter: drop-shadow(0 2px 6px #e91e6380);
+    }
+
+    @media (pointer: coarse), (max-width: 800px) {
+      .custom-cursor {
+        display: none !important;
+      }
+      body {
+        cursor: auto !important;
+      }
     }
   </style>
 </head>
