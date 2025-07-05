@@ -1,10 +1,20 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Internship Opportunity</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/paddin     color: #333;
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #e0f7ff);
+      color: #333;
     }
 
     .container {
@@ -1333,7 +1343,25 @@
 
   <!-- Custom Popup Modal -->
   <div id="customPopup" class="popup-overlay">
-    <div class="pospa</div>
+    <div class="popup-content new-popup">
+      <span class="close-btn" id="closePopup">&times;</span>
+      <div class="popup-heart">
+        <i class="fas fa-heartbeat"></i>
+      </div>
+      <h2 class="popup-heading">
+        Thank You! <span style="font-size:1.2em;">💖</span>
+      </h2>
+      <div class="popup-message">
+        I’m really hoping we can make something beautiful together.<br>
+        <span style="font-style:italic;color:#888;">
+          You can message me anytime, I'll be waiting! 😊
+        </span>
+      </div>
+      <a href="https://wa.me/923065364937" target="_blank" class="popup-whatsapp-link">
+        <i class="fab fa-whatsapp"> </i>WhatsApp: 03065364937
+      </a>
+    </div>
+  </div>
 
   <!-- Add this just after <body> tag -->
   <div class="custom-cursor" id="customCursor">💖</div>
@@ -1367,7 +1395,12 @@
           // Random horizontal offset
           flower.style.left = (45 + Math.random()*10) + '%';
           // Random size
-        
+          flower.style.fontSize = (1.7 + Math.random()*1.2) + 'em';
+          document.body.appendChild(flower);
+          setTimeout(() => flower.remove(), 1700);
+        }, i*180);
+      }
+    }
 
     // Animated floating hearts background
     function spawnHearts() {
